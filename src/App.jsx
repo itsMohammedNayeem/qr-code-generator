@@ -10,7 +10,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen w-full grid place-content-center bg-[#181818] justify-center text-center">
+    <div className="min-h-screen w-full grid place-content-center bg-[#181818] justify-center text-center font-mono">
       <div className="w-[23rem] p-7 space-y-8 text-slate-300">
         {value ? (
           <QRCode
@@ -19,7 +19,9 @@ function App() {
           />
         ) : (
           <div className="w-full h-[18rem] border border-neutral-200 grid place-content-center bg-[#202020]">
-            <span>Scan Your Way: Text or URL to QR</span>
+            <span className="text-pretty">
+              Scan Your Way: Text or URL to QR
+            </span>
           </div>
         )}
         <form className="space-y-5" onSubmit={handleChange}>
