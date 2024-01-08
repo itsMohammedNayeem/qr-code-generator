@@ -1,11 +1,29 @@
+import { useState } from "react";
+import QRCode from "react-qr-code";
+
 function App() {
+  const [value, setValue] = useState(null);
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setValue(e.target[0].value);
+  };
+
   return (
     <div className="min-h-screen w-full grid place-content-center bg-[#181818] justify-center text-center">
       <div className="w-[23rem] p-7 space-y-8 text-slate-300">
-        <div className="w-full h-[18rem] border border-neutral-200 rounded-3xl grid place-content-center bg-[#202020]">
-          <span>None</span>
-        </div>
-        <form className="space-y-5">
+        {value ? (
+          <QRCode
+            value={value}
+            // style={{ height: "auto", width: "100%", maxWidth: "100%" }}
+            className="w-full max-w-full h-auto border border-neutral-200"
+          />
+        ) : (
+          <div className="w-full h-[18rem] border border-neutral-200 grid place-content-center bg-[#202020]">
+            <span>Scan Your Way: Text or URL to QR</span>
+          </div>
+        )}
+        <form className="space-y-5" onSubmit={handleChange}>
           <div>
             <input
               type="text"
