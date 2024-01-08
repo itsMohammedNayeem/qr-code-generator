@@ -15,7 +15,6 @@ function App() {
         {value ? (
           <QRCode
             value={value}
-            // style={{ height: "auto", width: "100%", maxWidth: "100%" }}
             className="w-full max-w-full h-auto border border-neutral-200"
           />
         ) : (
@@ -32,7 +31,7 @@ function App() {
             />
           </div>
           <button className="rounded w-full py-2 flex justify-center bg-[#252525] hover:bg-neutral-600 duration-200 focus:outline focus:outline-neutral-600">
-            Create QR Code
+            Generate QR Now!
           </button>
         </form>
       </div>
